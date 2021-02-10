@@ -66,11 +66,18 @@ _Activity:_ Students walk in to the classroom, and the device acknolwedges their
 _Goals:_ Students going into class will see the lights and reflect on their decision to walk into class late; would also include a student identification system to feed into an automatic roll call each morning.
 
 **Include a picture of your storyboard here**
+
 ![Storyboard](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Screenshot%202021-02-10%20at%2011.24.48.png)
 
 **Summarize feedback you got here.**
-"The idea isn't bad!"
 
+"If a student knows he/she is late, does he/she need a light to show that he/she is late?"
+
+"Not useful now xD..(COVID)"
+
+"Might be quite useful for students with tight schedules"
+
+"Use the light to signal if they shouldn't enter a room (high temperature!, wrong class!, do not enter!)"
 
 ## Part B. Act out the Interaction
 
@@ -115,7 +122,8 @@ Think about the setting of the device: is the environment a place where the devi
 **Take a video of your prototyped interaction.**
 
 **Please indicate anyone you collaborated with on this Lab.**
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+
+Kae-Jer (Mike) Cho, Ting-Yu (Angus) Lin, Ming-Chun (Jeff) Lu
 
 # Staging Interaction, Part 2 
 
