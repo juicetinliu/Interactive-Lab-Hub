@@ -63,12 +63,11 @@ _Players:_ Students and the device.
 
 _Activity:_ Students walk in to the classroom, and the device acknolwedges their arrival to 'greet' them with colored lights depending on their lateness (Green - early, Red - late).
 
-_Goals:_ Students going into class will see the lights and reflect on their decision to walk into class late.
+_Goals:_ Students going into class will see the lights and reflect on their decision to walk into class late; would also include a student identification system to feed into an automatic roll call each morning.
 
-Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 **Include a picture of your storyboard here**
+![Storyboard](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Screenshot%202021-02-10%20at%2011.24.48.png)
 
-Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 **Summarize feedback you got here.**
 "The idea isn't bad!"
 
