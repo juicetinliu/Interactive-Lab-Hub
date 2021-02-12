@@ -57,13 +57,13 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 ## Part A. Plan 
 **Describe your setting, players, activity and goals here.**
 
-_Setting:_ At a school.
+- _Setting:_ At a school.
 
-_Players:_ Students and the device.
+- _Players:_ Students and the device.
 
-_Activity:_ Students walk in to the classroom through the doorway, and the device acknolwedges their arrival to 'greet' them with colored lights depending on their lateness (Green - early, Red - late).
+- _Activity:_ Students walk in to the classroom through the doorway, and the device acknolwedges their arrival to 'greet' them with colored lights depending on their lateness (Green - early, Red - late).
 
-_Goals:_ Students going into class will see the lights and reflect on their decision to walk into class late; there would also be a student identification system (with rfid ID cards) as part of this device to feed into an automatic roll call each morning.
+- _Goals:_ Students going into class will see the lights and reflect on their decision to walk into class late; there would also be a student identification system (with rfid ID cards) as part of this device to feed into an automatic roll call each morning.
 
 **Include a picture of your storyboard here**
 
@@ -71,11 +71,11 @@ _Goals:_ Students going into class will see the lights and reflect on their deci
 
 **Summarize feedback you got here.**
 
-"If a student knows he/she is late, does he/she need a light to show that he/she is late?"
+- "If a student knows he/she is late, does he/she need a light to show that he/she is late?"
 
-"Not so useful now ..(with COVID around)"
+- "Not so useful now ..(with COVID around)"
 
-"Might be quite useful for students with tight schedules"
+- "Might be quite useful for students with tight schedules"
 
 ## Part B. Act out the Interaction
 
@@ -83,11 +83,11 @@ Try physically acting out the interaction you planned. For now, you can just pre
 
 **Are there things that seemed better on paper than acted out?**
 
-It would be more clear to viewers to have some sort of interaction with the device (Eg. a card scan/temperature check) to signal an event instead of an automatic system with the student just walking through.
+- It would be more clear to viewers to have some sort of interaction with the device (Eg. a card scan/temperature check) to signal an event instead of an automatic system with the student just walking through.
 
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
 
-The light could be used as a signal in more ways, for example if they shouldn't enter a room because of their high temperature (with the current COVID climate) or if they aren't enrolled in the class (since their RFID ID cards can be cross-checked with the current class roster).
+- The light could be used as a signal in more ways, for example if they shouldn't enter a room because of their high temperature (with the current COVID climate) or if they aren't enrolled in the class (since their RFID ID cards can be cross-checked with the current class roster).
 
 ## Part C. Prototype the device
 
@@ -97,9 +97,12 @@ Code for the "Tinkerbelle" tool, and instructions for setting up the server and 
 
 We invented this tool for this lab! 
 **Give us feedback on Tinkerbelle.**
-There are connection issues with mobile (not sure what is causing the errors but rerunning the tinker.py script sometimes fixes it).
-Buttons don't fade on mobile when selecting the `Tinkerbelle` button.
-It's a pretty cool tool!
+
+- There are connection issues with mobile (not sure what is causing the errors but rerunning the tinker.py script sometimes fixes it).
+
+- Buttons don't fade on mobile when selecting the `Tinkerbelle` button.
+
+- It's a pretty cool tool!
 
 ## Part D. Wizard the device
 Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
