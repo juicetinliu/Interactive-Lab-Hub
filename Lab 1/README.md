@@ -115,7 +115,7 @@ Now, change the goal within the same setting, and update the interaction with th
 
 **Show the follow-up work here.**
 
-![Setup](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20D_2.mp4)
+![Follow-up](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20D_2.mp4)
 
 ## Part E. Costume the device
 
@@ -125,12 +125,17 @@ Think about the setting of the device: is the environment a place where the devi
 
 **Include sketches of what your device might look like here.**
 
+![Sketch](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20E.png)
+
 **What concerns or opportunitities are influencing the way you've designed the device to look?**
 
+The device has to be large enough for people to notice it and see it afar, but fit the style of a rectangular door. The design of the device was inspired by exit signs on top of doors to instill familiarity and was kept simple to reduce clutter.
 
 ## Part F. Record
 
 **Take a video of your prototyped interaction.**
+
+![Prototype](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20F.mp4)
 
 **Please indicate anyone you collaborated with on this Lab.**
 
@@ -139,7 +144,6 @@ Kae-Jer (Mike) Cho, Ting-Yu (Angus) Lin, Ming-Chun (Jeff) Lu
 # Staging Interaction, Part 2 
 
 This describes the second week's work for this lab activity.
-
 
 ## Prep (to be done before Lab on Wednesday)
 
