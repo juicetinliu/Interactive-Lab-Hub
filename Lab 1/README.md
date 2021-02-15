@@ -129,7 +129,7 @@ Think about the setting of the device: is the environment a place where the devi
 
 **What concerns or opportunitities are influencing the way you've designed the device to look?**
 
-The device has to be large enough for people to notice it and see it afar, but fit the style of a rectangular door. The design of the device was inspired by exit signs on top of doors to instill familiarity and was kept simple to reduce clutter. Concerns would have to be made about the maintainability and durability of the device as well as power consumption (probably a cabled connection), since it would be left for long periods of time on top of the doorway.
+The device has to be large enough for people to notice it and see it afar, but fit the style of a rectangular door. The design of the device was inspired by exit signs on top of doors to instill familiarity and was kept simple to reduce clutter. Concerns would have to be made about the maintainability and durability of the device as well as power consumption (probably a cabled connection), since it would be left for long periods of time on top of the doorway. There are no buttons or forms of interaction on the device itself as it operates as more of an indicator.
 
 ## Part F. Record
 
