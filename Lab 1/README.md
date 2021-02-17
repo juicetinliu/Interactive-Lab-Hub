@@ -151,6 +151,12 @@ You will be assigned three partners from another group. Go to their github pages
 
 **Summarize feedback from your partners here.**
 
+- Ming-Chun (Jeff) Lu: My guess for the scene: Covid Indicator ? Best idea ever! Only question is how does indicator determine whether the person got covid or not? Maybe by temperature?
+
+- Kae-Jer (Mike) Cho: My guess for the scene: A covid patient detector! it’s so useful and can help a lot of people! my question is that how do you detect the covid? does it detect by body temperature? maybe you need a temperature sensor or an infrared thermometer!
+
+- Ting-Yu (Angus) Lin: 
+
 ## Make it your own
 
 Do last week’s assignment again, but this time: 
