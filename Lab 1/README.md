@@ -155,7 +155,7 @@ You will be assigned three partners from another group. Go to their github pages
 
 - Kae-Jer (Mike) Cho: My guess for the scene: A covid patient detector! it’s so useful and can help a lot of people! my question is that how do you detect the covid? does it detect by body temperature? maybe you need a temperature sensor or an infrared thermometer!
 
-- Ting-Yu (Angus) Lin: 
+- Ting-Yu (Angus) Lin: My guess for the scene: A sensor alerts and blocks people if their body temperature are too high. Thoughts: Greattt! I like the design which is totally feasible imho and very useful at the moment. Question: Some people who get COVID don’t show a high body temperature, thus I think for this issue I care more about if others wear reliable masks. Hence, maybe can this sensor detect whether the mask people putting on is surgical or not?
 
 ## Make it your own
 
