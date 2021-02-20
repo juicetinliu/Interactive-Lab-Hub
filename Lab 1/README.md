@@ -174,7 +174,7 @@ Do last week’s assignment again, but this time:
 
 - _Activity:_ The device features two players, each with a copy of the device in their homes. Either person can change the color of the lamp, which causes the other lamp to mimic the color wirelessly. If bored, one can push down on the soft lamp to trigger a similar squashing of the lamp in the other person's house through servos mounted inside the lamp.
 
-- _Goals:_ Players will feel less alone at home, with the lamp symbolizing the presence of someone else they can communicate to, while also not being over-intrusive on their daily lives.
+- _Goals:_ Players will feel less alone at home, with the lamp symbolizing the presence of someone else they can communicate to, while also not being over-intrusive on their daily lives. The physicality of the lamp being compressible from both ends further adds to the sense of companionship and fun.
 
 **Include a picture of your storyboard here**
 
@@ -230,7 +230,7 @@ Think about the setting of the device: is the environment a place where the devi
 
 **Include sketches of what your device might look like here.**
 
-![Sketch](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20E.png)
+![Sketch](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Screenshot%202021-02-19%20at%2022.15.52.png)
 
 **What concerns or opportunitities are influencing the way you've designed the device to look?**
 
