@@ -165,3 +165,83 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 **Document everything here.**
+## Part A. Plan 
+**Describe your setting, players, activity and goals here.**
+
+- _Setting:_ At home, in a room.
+
+- _Players:_ Friends, people staying at home.
+
+- _Activity:_ The device features two players, each with a copy of the device in their homes. Either person can change the color of the lamp, which causes the other lamp to mimic the color wirelessly. If bored, one can push down on the soft lamp to trigger a similar squashing of the lamp in the other person's house through servos mounted inside the lamp.
+
+- _Goals:_ Players will feel less alone at home, with the lamp symbolizing the presence of someone else they can communicate to, while also not being over-intrusive on their daily lives.
+
+**Include a picture of your storyboard here**
+
+![Storyboard](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Screenshot%202021-02-19%20at%2021.47.51.png)
+
+**Summarize feedback you got here.**
+
+## Part B. Act out the Interaction
+
+Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
+
+**Are there things that seemed better on paper than acted out?**
+
+- It would be more clear to viewers to have some sort of interaction with the device (Eg. a card scan/temperature check) to signal an event instead of an automatic system with the student just walking through.
+
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
+
+- The light could be used as a signal in more ways, for example if they shouldn't enter a room because of their high temperature (with the current COVID climate) or if they aren't enrolled in the class (since their RFID ID cards can be cross-checked with the current class roster).
+
+## Part C. Prototype the device
+
+You will be using your smartphone as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device. 
+
+Code for the "Tinkerbelle" tool, and instructions for setting up the server and your phone are [here](https://github.com/FAR-Lab/tinkerbelle).
+
+We invented this tool for this lab! 
+**Give us feedback on Tinkerbelle.**
+
+- There are connection issues with mobile (not sure what is causing the errors but rerunning the tinker.py script sometimes fixes it).
+
+- Buttons don't fade on mobile when selecting the `Tinkerbelle` button.
+
+- It's a pretty cool tool!
+
+## Part D. Wizard the device
+Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
+
+**Include your first attempts at recording the set-up video here.**
+
+![Setup](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20D_1.mp4)
+
+Now, change the goal within the same setting, and update the interaction with the paper prototype. 
+
+**Show the follow-up work here.**
+
+![Follow-up](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20D_2.mp4)
+
+## Part E. Costume the device
+
+Only now should you start worrying about what the device should look like. Develop a costume so that you can use your phone as this device.
+
+Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
+
+**Include sketches of what your device might look like here.**
+
+![Sketch](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20E.png)
+
+**What concerns or opportunitities are influencing the way you've designed the device to look?**
+
+The device has to be large enough for people to notice it and see it afar, but fit the style of a rectangular door. The design of the device was inspired by exit signs on top of doors to instill familiarity and was kept simple to reduce clutter. Concerns would have to be made about the maintainability and durability of the device as well as power consumption (probably a cabled connection), since it would be left for long periods of time on top of the doorway. There are no buttons or forms of interaction on the device itself as it operates as more of an indicator.
+
+## Part F. Record
+
+**Take a video of your prototyped interaction.**
+
+![Prototype](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20F.mp4)
+
+**Please indicate anyone you collaborated with on this Lab.**
+
+Kae-Jer (Mike) Cho, Ting-Yu (Angus) Lin, Ming-Chun (Jeff) Lu
