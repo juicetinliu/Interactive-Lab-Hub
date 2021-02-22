@@ -185,17 +185,23 @@ Do last week’s assignment again, but this time:
 
 **Summarize feedback you got here.**
 
+- "It's a little useless for friends - since there's messaging XD"
+
+- "More of a gag than a useful device"
+
+- "Maybe you can add more interactivity for couples, especially long-distance relationships"
+
 ## Part B. Act out the Interaction
 
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
 
 **Are there things that seemed better on paper than acted out?**
 
-- ?
+- It seemed that showing the connectivity of the device (sending the signal to another device) would not be easy without some video editing/compositing.
 
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
 
-- ?
+- Not really; though it was clear that the video had to be well choreographed to make editing easier.
 
 ## Part C. Prototype the device
 
@@ -233,7 +239,7 @@ Think about the setting of the device: is the environment a place where the devi
 
 **What concerns or opportunitities are influencing the way you've designed the device to look?**
 
-?
+The device would have to be made more ergonomic and stylish as to be nice to look at and not ruin the visual setting. The spherical minimalist shape was inspired by a Poké Ball. The lighting would have to be bright enough as to catch the attention of the other person on the receiving end of the communication. The soft body would ideally be made of silicone or some durable yet elastic material while also being translucent to light. The device would probably be wired since it would have to constantly be on to listen for/broadcast signals to other similar devices. Since the device would be placed on a surface, it would not need to be over-engineered in terms of durability as it would ideally not be moved around too much or fall to the ground.
 
 ## Part F. Record
 
@@ -244,4 +250,4 @@ Think about the setting of the device: is the environment a place where the devi
 
 **Please indicate anyone you collaborated with on this Lab.**
 
-?
+Kae-Jer (Mike) Cho, Ting-Yu (Angus) Lin, Ming-Chun (Jeff) Lu, Eric Chen, Cheng-wei Hu
