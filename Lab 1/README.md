@@ -110,12 +110,14 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 **Include your first attempts at recording the set-up video here.**
 
 ![Setup](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20D_1.mp4)
+[Google Drive link](https://drive.google.com/file/d/1ZnzopLStq40G4d4xzSdy7EsOKAimWLuZ/view?usp=sharing)
 
 Now, change the goal within the same setting, and update the interaction with the paper prototype. 
 
 **Show the follow-up work here.**
 
 ![Follow-up](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20D_2.mp4)
+[Google Drive link](https://drive.google.com/file/d/1_y7k5J_EecfELjZqMp8iJ5wFbhV46E_i/view?usp=sharing)
 
 ## Part E. Costume the device
 
@@ -136,6 +138,7 @@ The device has to be large enough for people to notice it and see it afar, but f
 **Take a video of your prototyped interaction.**
 
 ![Prototype](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Part%20F.mp4)
+[Google Drive link](https://drive.google.com/file/d/1SDP1MoYZn83hy0jhMh3ZugB5IA3T5ok2/view?usp=sharing)
 
 **Please indicate anyone you collaborated with on this Lab.**
 
@@ -207,13 +210,16 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 **Include your first attempts at recording the set-up video here.**
 
-![Setup]()
+![Setup](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/2%20Part%20D_1.mp4)
+[Google Drive link](https://drive.google.com/file/d/1W1a-gAwLBgaC_DD04vFmlA2OsXmkCjuh/view?usp=sharing)
 
 Now, change the goal within the same setting, and update the interaction with the paper prototype. 
 
 **Show the follow-up work here.**
 
-![Follow-up]()
+![Follow-up](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/2%20Part%20D_2.mp4)
+[Google Drive link](https://drive.google.com/file/d/1t1CJAj4gdWiXp4yr2DTkEfFi3e0VDFCn/view?usp=sharing)
+
 
 ## Part E. Costume the device
 
@@ -233,7 +239,8 @@ Think about the setting of the device: is the environment a place where the devi
 
 **Take a video of your prototyped interaction.**
 
-![Prototype]()
+![Prototype](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/2%20Part%20F.mp4)
+[Google Drive link](https://drive.google.com/file/d/1ecy8bR27Gs-RrATIB3prQ0f_8kLWjjid/view?usp=sharing)
 
 **Please indicate anyone you collaborated with on this Lab.**
 
