@@ -181,7 +181,7 @@ Do last week’s assignment again, but this time:
 
 **Include a picture of your storyboard here**
 
-![Storyboard](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Screenshot%202021-02-19%20at%2021.47.51.png)
+![Storyboard](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Screenshot%202021-02-21%20at%2019.54.55.png)
 
 **Summarize feedback you got here.**
 
