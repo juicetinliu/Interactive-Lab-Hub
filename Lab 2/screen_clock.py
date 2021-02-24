@@ -5,7 +5,6 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 
-
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
 dc_pin = digitalio.DigitalInOut(board.D25)
@@ -55,6 +54,7 @@ x = 0
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+font_time = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 36)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
@@ -65,8 +65,18 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py 
+    system_time = time.strftime("%m/%d/%Y %H:%M:%S")
+    date_str, time_str = system_time.split(" ")
 
+    date_font = font.getsize(date_str)
+    x = width/2 - date_font[0]/2
+    y = height/4 - date_font[1]/2
+    draw.text((x, y), date_str, font=font, fill="#FFFFFF")
+
+    time_font = font_time.getsize(time_str)
+    x = width/2 - time_font[0]/2
+    y = height/2 - time_font[1]/2
+    draw.text((x, y), time_str, font=font_time, fill="#FFFFFF")
     # Display image.
     disp.image(image, rotation)
     time.sleep(1)
