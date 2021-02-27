@@ -170,6 +170,9 @@ After that git will ask you to login to your github account to upload.
 
 **Take a video of your PiClock.**
 
+[Clock MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%202/IMG_9583%20(1).mov)
+([Google Drive link](https://drive.google.com/file/d/13B2rwXvOHE5wDXr4fX36hK9I2ZKg0OhT/view?usp=sharing))
+
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
