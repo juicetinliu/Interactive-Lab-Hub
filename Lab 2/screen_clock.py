@@ -85,6 +85,7 @@ drain_x = int(num_points * 0.15)
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
+    draw.rectangle((width/4, height/6, width*3/4, height/3), fill="#FFFFFF")
     
     # OTHER DRAWING AND LOGIC
     fill_tub = not buttonA.value and wavepos > 0
@@ -136,13 +137,14 @@ while True:
     wave = temp
     
     # DRAW TIME ON TOP (LAST STEP)
-    system_time = time.strftime("%m/%d/%Y %H:%M:%S")
+    system_time = time.strftime("%b/%d/%Y %H:%M:%S")
     date_str, time_str = system_time.split(" ")
-
-    date_font = font.getsize(date_str)
+    
+    date_print = " ".join(date_str.split("/"))
+    date_font = font.getsize(date_print)
     x = width/2 - date_font[0]/2
     y = height/4 - date_font[1]/2
-    draw.text((x, y), date_str, font=font, fill="#0373fc")
+    draw.text((x, y), date_print, font=font, fill="#0373fc")
 
     time_font = font_time.getsize(time_str)
     x_start = width/2 - time_font[0]/2
