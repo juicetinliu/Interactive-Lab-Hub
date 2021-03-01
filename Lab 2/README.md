@@ -9,6 +9,8 @@ It is worth spending a little time thinking about how you mark time, and what wo
 **Please indicate anyone you collaborated with on this Lab here.**
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
+- Inspiration: [2D Ripple Simulation](https://web.archive.org/web/20160418004149/http://freespace.virgin.net/hugo.elias/graphics/x_water.htm)
+
 ## Prep
 
 [Lab prep](prep.md) is extra long this week! Make sure you read it over in time to prepare for lab on Wednesday.
@@ -170,11 +172,13 @@ After that git will ask you to login to your github account to upload.
 
 **Take a video of your PiClock.**
 
-[Clock MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%202/IMG_9583%20(1).mov)
+A Drop of Water Every Second: [Clock MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%202/IMG_9583%20(1).mov)
 ([Google Drive link](https://drive.google.com/file/d/13B2rwXvOHE5wDXr4fX36hK9I2ZKg0OhT/view?usp=sharing))
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
+Let's make an aquarium!
 
+![Sketch](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%202/Screenshot%202021-03-01%20at%2000.22.18.png)
 
