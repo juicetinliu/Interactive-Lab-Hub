@@ -77,10 +77,33 @@ raindrops = []
 drop = False
 drop_size = 2
 last_time = time.time()
+
 fill_tub = False
-tap_x = int(num_points * 0.85)
+fill_x = int(num_points * 0.85)
 drain_tub = False
 drain_x = int(num_points * 0.15)
+
+add_fish = True
+
+class Fish:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.symb = "🐟𓆜🐠"
+        self.v = 1
+        self.ang = random.random() * 2 * math.pi
+
+    def draw(self, canvas):
+        canvas.text((self.x, self.y), self.symb, font=font)
+
+    def move(self):
+        if self.y < wavepos:
+            self.y += 1
+        else:
+            self.ang += (random.random() - 0.5) * 2 * (math.pi / 8)
+            self.x += self.v * math.cos(self.ang)
+            self.y += self.v * math.sin(self.ang)
+        
 
 while True:
     # Draw a black filled box to clear the image.
@@ -88,8 +111,14 @@ while True:
     draw.rectangle((width/4, height/6, width*3/4, height/3), fill="#FFFFFF")
     
     # OTHER DRAWING AND LOGIC
-    fill_tub = not buttonA.value and wavepos > 0
-    drain_tub = not buttonB.value and wavepos < height
+    if not (buttonB.value or buttonA.value):
+        fill_tub = False
+        drain_tub = False
+        add_fish = True
+    else:
+        add_fish = False
+        fill_tub = not buttonA.value and wavepos > 0
+        drain_tub = not buttonB.value and wavepos < height
     
     # Release droplet every second
     if time.time() - last_time > 1 and wavepos > 0:
@@ -119,9 +148,9 @@ while True:
     
     # Fill tub
     if fill_tub:
-        fill_tub_x = (tap_x-1)*width/(num_points-2)
+        fill_tub_x = (fill_x-1)*width/(num_points-2)
         draw.rectangle([fill_tub_x - 5, 0, fill_tub_x + 5, height], fill="#00FFFF")
-        wave[tap_x] = 10 + int(5*math.sin(time.time()))
+        wave[fill_x] = 10 + int(5*math.sin(time.time()))
         wavepos -= 0.5
         
     # Drain tub
