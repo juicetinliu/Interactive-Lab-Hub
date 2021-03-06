@@ -84,31 +84,49 @@ drain_tub = False
 drain_x = int(num_points * 0.15)
 
 add_fish = True
+fishes = []
+fish_time = time.time()
 
 class Fish:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.symb = "🐟𓆜🐠"
+        self.symb = "🐟"
         self.v = 1
         self.ang = random.random() * 2 * math.pi
+        self.remove = False
+        self.col = "#"+''.join([random.choice('789ABCDEF') for j in range(6)])
 
     def draw(self, canvas):
-        canvas.text((self.x, self.y), self.symb, font=font)
+        x, y = self.x, self.y
+        cosang = math.cos(self.ang)
+        sinang = math.sin(self.ang)
+        #canvas.text((self.x, self.y), self.symb, font=font)
+        canvas.ellipse((x-4, y-4, x+4, y+4), fill=self.col)
+        canvas.point([x+2*cosang, y+2*sinang], fill=0)
+        p_1 = (x-3*cosang, y-3*sinang)
+        tailang = math.tan(4/8)
+        p_2 = (x-8*math.cos(self.ang+tailang), y-8*math.sin(self.ang+tailang))
+        p_3 = (x-8*math.cos(self.ang-tailang), y-8*math.sin(self.ang-tailang))
+        canvas.polygon([p_1, p_2, p_3], fill=self.col)
 
     def move(self):
+        vel = self.v
         if self.y < wavepos:
-            self.y += 1
+            self.ang = math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 16)
+            vel = 6
         else:
-            self.ang += (random.random() - 0.5) * 2 * (math.pi / 8)
-            self.x += self.v * math.cos(self.ang)
-            self.y += self.v * math.sin(self.ang)
+            self.ang += (random.random() - 0.5) * 2 * (math.pi / 16)
+        self.x += vel * math.cos(self.ang)
+        self.y += vel * math.sin(self.ang)
+        if(self.x > width or self.x < 0 or self.y > height):
+            self.remove = True
         
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
-    draw.rectangle((width/4, height/6, width*3/4, height/3), fill="#FFFFFF")
+    draw.rectangle((width/4, height/6, width*3/4, height/3), fill="#CCCCCC")
     
     # OTHER DRAWING AND LOGIC
     if not (buttonB.value or buttonA.value):
@@ -125,6 +143,13 @@ while True:
         last_time = time.time()
         raindrops.append([random.randrange(1,num_points-1), 0])
         drop = False
+    
+    # Add fishes
+    if add_fish:
+        if time.time() - fish_time > 1:
+            fish_time = time.time()
+            fishes.append(Fish(random.randrange(width/2-10,width/2+10),0))
+        
     
     # Move droplets and calculate collision with water surface
     for r in range(len(raindrops)-1, -1, -1):
@@ -157,13 +182,23 @@ while True:
     if drain_tub:
         wave[drain_x] = 10 + int(5*math.sin(time.time()))
         wavepos += 0.5
-        
+    
     # Draw water
     line_points = [((i-1)*width/(num_points-2), w + wavepos) for i, w in enumerate(wave)]
     draw.polygon(line_points+[(width,height),(0,height)], fill="#00FFFF")
     temp = wave_v
     wave_v = wave
     wave = temp
+    
+    # Draw fishes
+    for f in fishes:
+        f.move()
+        f.draw(draw)
+        
+    # Kill fishes
+    for f in reversed(fishes):
+        if f.remove:
+            fishes.remove(f)
     
     # DRAW TIME ON TOP (LAST STEP)
     system_time = time.strftime("%b/%d/%Y %H:%M:%S")
