@@ -191,6 +191,9 @@ Let's make an aquarium!
 
 # Lab 2 Part 2
 
+There are fishes: [Aquarium MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%202/IMG_9657%20(1).mov)
+([Google Drive link](https://drive.google.com/file/d/1UkJ9ureOB6a-1CWawr5KqfM0bMh5FtgA/view?usp=sharing))
+
 Pull Interactive Lab Hub updates to your repo.
 
 Modify the code from last week's lab to make a new visual interface for your new clock. You may [extend the Pi](Extending%20the%20Pi.md) by adding sensors or buttons, but this is not required.
