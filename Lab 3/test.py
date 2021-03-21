@@ -148,26 +148,22 @@ while True:
             add_ices = True
         else:
             add_flames = False
-            add_ices = False
-    else:
-        twist.set_color(100, 10, 100)
-        
-    # Release droplet every second
-    if add_flames:
+            add_ices = False        
+    elif add_flames:
         twist.set_color(100, random.randrange(100), 00)
         if time.time() - flame_time > 0.01:
             flame_time = time.time()
             flames.append(Flame(random.randrange(width), height))
             flames.append(Flame(random.randrange(width), height))
             flames.append(Flame(random.randrange(width), height))
-
-    # Release droplet every second
-    if add_ices:
+    elif add_ices:
         twist.set_color(10, 10, 100)
         if time.time() - ice_time > 1:
             ice_time = time.time()
             ices.append(Ice(random.randrange(width), 0))
-    
+    else:
+        twist.set_color(100, 10, 100)
+
     # Draw flames
     for f in flames:
         f.move()
