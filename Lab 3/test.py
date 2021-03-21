@@ -140,13 +140,13 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
     
-    if twist.pressed and not pressed:
+    twistp = twist.pressed
+    if twistp and not pressed:
         pressed = True
-    elif not twist.pressed and pressed:
+    elif not twistp and pressed:
         pressed = False
 
-    if pressed:
-        start_voice = True
+    start_voice = pressed
 
     if start_voice:
         twist.set_color(10, 100, 10)
