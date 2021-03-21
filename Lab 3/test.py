@@ -134,19 +134,24 @@ class Ice:
         if(self.x > width or self.x < 0 or self.y > height or self.y < 0):
             self.remove = True
 
-pressed = False
+wait_press = True
+wait_release = False
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
     
     twistp = twist.pressed
-    if twistp and not pressed:
-        pressed = True
-    elif not twistp and pressed:
-        pressed = False
+    if wait_press:
+        if twistp:
+            wait_press = False
+            wait_release = True
+    if wait_release:
+        if not twistp:
+            wait_press = True
+            wait_release = False
 
-    print(pressed)
+    print(wait_press, wait_release)
     if start_voice:
         twist.set_color(10, 100, 10)
         for event in pygame.event.get():
