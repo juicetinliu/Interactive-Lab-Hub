@@ -135,13 +135,29 @@ class Ice:
             self.remove = True
 
 press_state = 0
-
+prevcount = twist.count
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
     
-    start_voice = twist.clicked
-
+    twistp = twist.pressed
+    if press_state == 0:
+        if twistp:
+            press_state = 1
+    elif press_state == 1:
+        start_voice = True
+        if twistp:
+            press_state = 2
+        else:
+            press_state = 0
+    elif press_state == 2:
+        if not twistp:
+            press_state = 0
+    
+    print(twist.count - prevcount)
+    prevcount = twist.count
+    
+    
     if start_voice:
         twist.set_color(10, 100, 10)
         for event in pygame.event.get():
