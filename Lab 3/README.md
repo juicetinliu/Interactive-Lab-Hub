@@ -96,17 +96,17 @@ The knob in this state is purple. A button press on the knob takes us to the **V
 ![Idle](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%203/IMG_9743.png)
 
 #### Voice (when the system is listening for voice input)
-The knob in this state is green. Once the user finishes speaking, they are taken either back to the **Idle** state or **Heating**/**Cooling** state.
+The knob in this state is green. Once the user finishes speaking, they are taken either back to the **Idle** state or **Heating**/**Cooling** state. Pressing the knob here cancels the **Voice** state (going the the previous state).
 
 ![Voice](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%203/IMG_9744.png)
 
 #### Cooling (when the system is cooling)
-A nice snowflake animation is played and the knob turns ice-blue.
+A nice snowflake animation is played and the knob turns ice-blue. A button press on the knob takes us to the **Voice** state.
 
 ![Ice](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%203/IMG_9738.png)
  
 #### Heating (when the system is heating)
-A nice ember animation is played and the knob flickers like a flame.
+A nice ember animation is played and the knob flickers like a flame. A button press on the knob takes us to the **Voice** state.
 
 ![Fire](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%203/IMG_9739.png)
 
