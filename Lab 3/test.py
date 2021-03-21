@@ -145,7 +145,7 @@ while True:
         if twistp:
             press_state = 1
     elif press_state == 1:
-        start_voice = True
+        start_voice = not start_voice
         if twistp:
             press_state = 2
         else:
