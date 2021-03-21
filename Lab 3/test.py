@@ -96,7 +96,7 @@ class Flame:
         self.v = 1
         self.ang = random.random() * 2 * math.pi
         self.remove = False
-        self.col = "#"+''.join([random.choice('789ABCDEF') for j in range(6)])
+        self.col = "#FF"+ ''.join([random.choice('02468BDF') for j in range(2)]) + "00"
 
     def draw(self, canvas):
         x, y = self.x, self.y
@@ -122,37 +122,38 @@ while True:
     # fill_tub = not buttonA.value
     # drain_tub = not buttonB.value
     
-    # # Release droplet every second
-    # if add_flames:
-    #     if time.time() - flame_time > 1:
-    #         flame_time = time.time()
+    # Release droplet every second
+    if start_voice:
+        if time.time() - flame_time > 1:
+            flame_time = time.time()
+            flames.append(Flame(random.randrange(width), height))
 
-    # # Release droplet every second
-    # if add_ices:
-    #     if time.time() - ice_time > 1:
-    #         ice_time = time.time()
+    # Release droplet every second
+    if add_ices:
+        if time.time() - ice_time > 1:
+            ice_time = time.time()
     
-    # # Draw flames
-    # for f in flames:
-    #     f.move()
-    #     f.draw(draw)
+    # Draw flames
+    for f in flames:
+        f.move()
+        f.draw(draw)
+    
+    # Draw ices
+    for i in ices:
+        i.move()
+        i.draw(draw)
         
-    # # Kill flames
-    # for f in reversed(flames):
-    #     if f.remove:
-    #         flames.remove(f)
-    
-    # # Draw ices
-    # for i in ices:
-    #     i.move()
-    #     i.draw(draw)
+    # Kill flames
+    for f in reversed(flames):
+        if f.remove:
+            flames.remove(f)
         
-    # # Kill ices
-    # for i in reversed(ices):
-    #     if i.remove:
-    #         ices.remove(i)
+    # Kill ices
+    for i in reversed(ices):
+        if i.remove:
+            ices.remove(i)
     
-    print(twist.count)
+    # print(twist.count)
     if start_voice:
         twist.set_color(10, 100, 10)
     else:
