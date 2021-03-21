@@ -107,7 +107,7 @@ class Flame:
         self.ang = 3*math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 8)
         self.x += vel * math.cos(self.ang)
         self.y += vel * math.sin(self.ang)
-        if(self.x > width or self.x < 0 or self.y > height):
+        if(self.x > width or self.x < 0 or self.y > height or self.y < 0):
             self.remove = True
         
 class Ice:
@@ -125,10 +125,10 @@ class Ice:
 
     def move(self):
         vel = self.v
-        self.ang = math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 8)
+        self.ang = math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 4)
         self.x += vel * math.cos(self.ang)
         self.y += vel * math.sin(self.ang)
-        if(self.x > width or self.x < 0 or self.y > height):
+        if(self.x > width or self.x < 0 or self.y > height or self.y < 0):
             self.remove = True
 
 while True:
@@ -137,9 +137,18 @@ while True:
     
     start_voice = twist.pressed
     # OTHER DRAWING AND LOGIC
-    add_flames = not start_voice
-    add_ices = start_voice
-    
+    if start_voice:
+        temp_state = input()
+        if temp_state == "h":
+            add_flames = True
+            add_ices = False
+        elif temp_state == "c":
+            add_flames = False
+            add_ices = True
+        else:
+            add_flames = False
+            add_ices = False
+        
     # Release droplet every second
     if add_flames:
         if time.time() - flame_time > 0.01:
