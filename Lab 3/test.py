@@ -146,8 +146,7 @@ while True:
     elif not twistp and pressed:
         pressed = False
 
-    start_voice = pressed
-
+    print(pressed)
     if start_voice:
         twist.set_color(10, 100, 10)
         for event in pygame.event.get():
