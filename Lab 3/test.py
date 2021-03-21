@@ -117,7 +117,7 @@ class Ice:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.v = 2
+        self.v = 4
         self.ang = random.random() * 2 * math.pi
         self.symb = "❄"
         self.remove = False
@@ -181,7 +181,7 @@ while True:
                 flames.append(Flame(random.randrange(width), height))
         elif add_ices:
             draw.rectangle((0, 0, width, height), outline=0, fill="#2e2e4c")
-            twist.set_color(0, random.randrange(20), 100)
+            twist.set_color(10, random.randrange(20,50), 100)
             if time.time() - ice_time > 0.5:
                 ice_time = time.time()
                 ices.append(Ice(random.randrange(width), 0))
