@@ -95,7 +95,7 @@ class Flame:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.v = 6
+        self.v = random.randrange(5,7)
         self.ang = random.random() * 2 * math.pi
         self.remove = False
         self.col = "#FF"+ ''.join([random.choice('02468BDF') for j in range(2)]) + "00" #random red-yellow
@@ -117,7 +117,7 @@ class Ice:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.v = 4
+        self.v = random.randrange(3,5)
         self.ang = random.random() * 2 * math.pi
         self.symb = "❄"
         self.remove = False
