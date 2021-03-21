@@ -134,11 +134,19 @@ class Ice:
         if(self.x > width or self.x < 0 or self.y > height or self.y < 0):
             self.remove = True
 
+pressed = False
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
     
-    start_voice = twist.pressed
+    if twist.pressed and not pressed:
+        pressed = True
+    elif not twist.pressed and pressed:
+        pressed = False
+
+    if pressed:
+        start_voice = True
 
     if start_voice:
         twist.set_color(10, 100, 10)
@@ -152,23 +160,25 @@ while True:
                     add_ices = True
                 else:
                     add_flames = False
-                    add_ices = False        
-    elif add_flames:
-        twist.set_color(100, random.randrange(100), 00)
-        draw.rectangle((0, 0, width, height), outline=0, fill="#391c1c")
-        if time.time() - flame_time > 0.01:
-            flame_time = time.time()
-            flames.append(Flame(random.randrange(width), height))
-            flames.append(Flame(random.randrange(width), height))
-            flames.append(Flame(random.randrange(width), height))
-    elif add_ices:
-        draw.rectangle((0, 0, width, height), outline=0, fill="#2e2e4c")
-        twist.set_color(10, 10, 100)
-        if time.time() - ice_time > 1:
-            ice_time = time.time()
-            ices.append(Ice(random.randrange(width), 0))
-    else:
-        twist.set_color(100, 10, 100)
+                    add_ices = False
+                start_voice = False
+    else:        
+        if add_flames:
+            twist.set_color(100, random.randrange(100), 00)
+            draw.rectangle((0, 0, width, height), outline=0, fill="#391c1c")
+            if time.time() - flame_time > 0.01:
+                flame_time = time.time()
+                flames.append(Flame(random.randrange(width), height))
+                flames.append(Flame(random.randrange(width), height))
+                flames.append(Flame(random.randrange(width), height))
+        elif add_ices:
+            draw.rectangle((0, 0, width, height), outline=0, fill="#2e2e4c")
+            twist.set_color(10, 10, 100)
+            if time.time() - ice_time > 1:
+                ice_time = time.time()
+                ices.append(Ice(random.randrange(width), 0))
+        else:
+            twist.set_color(100, 10, 100)
 
     # Draw flames
     for f in flames:
