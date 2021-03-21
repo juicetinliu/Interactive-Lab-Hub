@@ -145,6 +145,7 @@ while True:
         if twistp:
             press_state = 1
     elif press_state == 1:
+        start_voice = True
         if twistp:
             press_state = 2
         else:
@@ -153,7 +154,6 @@ while True:
         if not twistp:
             press_state = 0
 
-    print(press_state)
     if start_voice:
         twist.set_color(10, 100, 10)
         for event in pygame.event.get():
@@ -161,13 +161,15 @@ while True:
                 if event.key == pygame.K_h:
                     add_flames = True
                     add_ices = False
+                    start_voice = False
                 elif event.key == pygame.K_c:
                     add_flames = False
                     add_ices = True
-                else:
+                    start_voice = False
+                elif event.key == pygame.K_x:
                     add_flames = False
                     add_ices = False
-                start_voice = False
+                    start_voice = False
     else:        
         if add_flames:
             twist.set_color(100, random.randrange(100), 00)
