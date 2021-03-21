@@ -104,7 +104,7 @@ class Flame:
 
     def move(self):
         vel = self.v
-        self.ang = 3*math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 16)
+        self.ang = 3*math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 8)
         self.x += vel * math.cos(self.ang)
         self.y += vel * math.sin(self.ang)
         if(self.x > width or self.x < 0 or self.y > height):
@@ -125,7 +125,7 @@ class Ice:
 
     def move(self):
         vel = self.v
-        self.ang = math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 16)
+        self.ang = math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 8)
         self.x += vel * math.cos(self.ang)
         self.y += vel * math.sin(self.ang)
         if(self.x > width or self.x < 0 or self.y > height):
@@ -144,6 +144,8 @@ while True:
     if add_flames:
         if time.time() - flame_time > 0.01:
             flame_time = time.time()
+            flames.append(Flame(random.randrange(width), height))
+            flames.append(Flame(random.randrange(width), height))
             flames.append(Flame(random.randrange(width), height))
 
     # Release droplet every second
