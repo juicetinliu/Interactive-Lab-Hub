@@ -135,7 +135,7 @@ class Ice:
             self.remove = True
 
 press_state = 0
-prevcount = twist.count
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
@@ -153,10 +153,6 @@ while True:
     elif press_state == 2:
         if not twistp:
             press_state = 0
-    
-    print(twist.count - prevcount)
-    prevcount = twist.count
-    
     
     if start_voice:
         twist.set_color(10, 100, 10)
