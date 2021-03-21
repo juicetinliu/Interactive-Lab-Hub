@@ -1,7 +1,7 @@
 import time, math, random
 import subprocess
 import digitalio
-import board, busio
+import board, busio, keyboard
 import qwiic_twist
 from PIL import Image, ImageDraw, ImageFont
 from adafruit_rgb_display.rgb import color565
@@ -139,11 +139,10 @@ while True:
 
     if start_voice:
         twist.set_color(10, 100, 10)
-        temp_state = input()
-        if temp_state == "h":
+        if keyboard.is_pressed('h'):
             add_flames = True
             add_ices = False
-        elif temp_state == "c":
+        elif keyboard.is_pressed('c'):
             add_flames = False
             add_ices = True
         else:
