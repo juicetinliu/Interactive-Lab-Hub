@@ -1,7 +1,7 @@
 import time, math, random
 import subprocess
 import digitalio
-import board
+import board, busio
 import qwiic_twist
 from PIL import Image, ImageDraw, ImageFont
 from adafruit_rgb_display.rgb import color565
@@ -153,7 +153,10 @@ while True:
     #         ices.remove(i)
     
     print(twist.count)
-    twist.set_color(100, 10, 50)
+    if start_voice:
+        twist.set_color(10, 100, 10)
+    else:
+        twist.set_color(100, 10, 10)
 
     # Display image.
     disp.image(image, rotation)
