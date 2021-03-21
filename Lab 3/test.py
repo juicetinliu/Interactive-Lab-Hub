@@ -136,8 +136,9 @@ while True:
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
     
     start_voice = twist.pressed
-    # OTHER DRAWING AND LOGIC
+
     if start_voice:
+        twist.set_color(10, 100, 10)
         temp_state = input()
         if temp_state == "h":
             add_flames = True
@@ -148,6 +149,8 @@ while True:
         else:
             add_flames = False
             add_ices = False
+    else:
+        twist.set_color(100, 10, 10)
         
     # Release droplet every second
     if add_flames:
@@ -184,10 +187,6 @@ while True:
             ices.remove(i)
     
     # print(twist.count)
-    if start_voice:
-        twist.set_color(10, 100, 10)
-    else:
-        twist.set_color(100, 10, 10)
 
     # Display image.
     disp.image(image, rotation)
