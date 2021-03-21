@@ -92,10 +92,10 @@ class Flame:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.v = 2
+        self.v = 6
         self.ang = random.random() * 2 * math.pi
         self.remove = False
-        self.col = "#FF"+ ''.join([random.choice('02468BDF') for j in range(2)]) + "00"
+        self.col = "#FF"+ ''.join([random.choice('02468BDF') for j in range(2)]) + "00" #random red-yellow
 
     def draw(self, canvas):
         x, y = self.x, self.y
@@ -114,7 +114,7 @@ class Ice:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.v = 1
+        self.v = 2
         self.ang = random.random() * 2 * math.pi
         self.symb = "❄"
         self.remove = False
@@ -125,7 +125,7 @@ class Ice:
 
     def move(self):
         vel = self.v
-        self.ang = math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 4)
+        self.ang = math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 2)
         self.x += vel * math.cos(self.ang)
         self.y += vel * math.sin(self.ang)
         if(self.x > width or self.x < 0 or self.y > height or self.y < 0):
@@ -151,12 +151,14 @@ while True:
             add_ices = False        
     elif add_flames:
         twist.set_color(100, random.randrange(100), 00)
+        draw.rectangle((0, 0, width, height), outline=0, fill="#391c1c")
         if time.time() - flame_time > 0.01:
             flame_time = time.time()
             flames.append(Flame(random.randrange(width), height))
             flames.append(Flame(random.randrange(width), height))
             flames.append(Flame(random.randrange(width), height))
     elif add_ices:
+        draw.rectangle((0, 0, width, height), outline=0, fill="#2e2e4c")
         twist.set_color(10, 10, 100)
         if time.time() - ice_time > 1:
             ice_time = time.time()
