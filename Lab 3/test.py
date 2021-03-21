@@ -74,7 +74,6 @@ i2c = busio.I2C(board.SCL, board.SDA)
 
 twist = qwiic_twist.QwiicTwist()
 twist.begin()
-print(twist.count)
 
 raindrops = []
 drop = False
@@ -93,7 +92,7 @@ class Flame:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.v = 1
+        self.v = 2
         self.ang = random.random() * 2 * math.pi
         self.remove = False
         self.col = "#FF"+ ''.join([random.choice('02468BDF') for j in range(2)]) + "00"
@@ -111,20 +110,39 @@ class Flame:
         if(self.x > width or self.x < 0 or self.y > height):
             self.remove = True
         
+class Ice:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.v = 1
+        self.ang = random.random() * 2 * math.pi
+        self.symb = "❄"
+        self.remove = False
+
+    def draw(self, canvas):
+        x, y = self.x, self.y
+        canvas.text((self.x, self.y), self.symb, font=font, fill="#FFFFFF")
+
+    def move(self):
+        vel = self.v
+        self.ang = math.pi/2 + (random.random() - 0.5) * 2 * (math.pi / 16)
+        self.x += vel * math.cos(self.ang)
+        self.y += vel * math.sin(self.ang)
+        if(self.x > width or self.x < 0 or self.y > height):
+            self.remove = True
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#391c3e")
-    draw.rectangle((width/4, height/6, width*3/4, height/3), fill="#CCCCCC")
     
     start_voice = twist.pressed
-    # # OTHER DRAWING AND LOGIC
-    # fill_tub = not buttonA.value
-    # drain_tub = not buttonB.value
+    # OTHER DRAWING AND LOGIC
+    add_flames = not start_voice
+    add_ices = start_voice
     
     # Release droplet every second
-    if start_voice:
-        if time.time() - flame_time > 1:
+    if add_flames:
+        if time.time() - flame_time > 0.01:
             flame_time = time.time()
             flames.append(Flame(random.randrange(width), height))
 
@@ -132,6 +150,7 @@ while True:
     if add_ices:
         if time.time() - ice_time > 1:
             ice_time = time.time()
+            ices.append(Ice(random.randrange(width), 0))
     
     # Draw flames
     for f in flames:
