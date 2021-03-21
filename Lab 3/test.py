@@ -154,6 +154,7 @@ while True:
         if not twistp:
             press_state = 0
 
+    print(twist.count)
     if start_voice:
         twist.set_color(10, 100, 10)
         for event in pygame.event.get():
@@ -182,7 +183,7 @@ while True:
         elif add_ices:
             draw.rectangle((0, 0, width, height), outline=0, fill="#2e2e4c")
             twist.set_color(10, 10, 100)
-            if time.time() - ice_time > 1:
+            if time.time() - ice_time > 0.5:
                 ice_time = time.time()
                 ices.append(Ice(random.randrange(width), 0))
         else:
