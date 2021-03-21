@@ -163,8 +163,7 @@ while True:
 
     # Release droplet every second
     if add_ices:
-        bl = random.randrange(25, 50)
-        twist.set_color(bl, bl, 100)
+        twist.set_color(10, 10, 100)
         if time.time() - ice_time > 1:
             ice_time = time.time()
             ices.append(Ice(random.randrange(width), 0))
