@@ -1,11 +1,14 @@
 import time, math, random
 import subprocess
 import digitalio
-import board, busio, keyboard
+import board, busio, pygame
 import qwiic_twist
 from PIL import Image, ImageDraw, ImageFont
 from adafruit_rgb_display.rgb import color565
 import adafruit_rgb_display.st7789 as st7789
+
+pygame.init()
+screen = pygame.display.set_mode((400,400))
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -139,15 +142,17 @@ while True:
 
     if start_voice:
         twist.set_color(10, 100, 10)
-        if keyboard.is_pressed('h'):
-            add_flames = True
-            add_ices = False
-        elif keyboard.is_pressed('c'):
-            add_flames = False
-            add_ices = True
-        else:
-            add_flames = False
-            add_ices = False        
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_h:
+                    add_flames = True
+                    add_ices = False
+                elif event.key == pygame.K_c:
+                    add_flames = False
+                    add_ices = True
+                else:
+                    add_flames = False
+                    add_ices = False        
     elif add_flames:
         twist.set_color(100, random.randrange(100), 00)
         draw.rectangle((0, 0, width, height), outline=0, fill="#391c1c")
