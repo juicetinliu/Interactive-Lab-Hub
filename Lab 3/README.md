@@ -89,20 +89,25 @@ The system should:
 
 ### System
 The system was split into 4 states:
+
 #### Idle (when the system is waiting for voice input or not heating/cooling)
-A button press on the knob takes us to the **Voice** state
+The knob in this state is purple. A button press on the knob takes us to the **Voice** state.
 
 ![Idle](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%203/IMG_9743.png)
 
 #### Voice (when the system is listening for voice input)
-Once the user finishes speaking, they are taken either back to the **Idle** state or **Heating**/**Cooling** state.
+The knob in this state is green. Once the user finishes speaking, they are taken either back to the **Idle** state or **Heating**/**Cooling** state.
 
 ![Voice](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%203/IMG_9744.png)
 
 #### Cooling (when the system is cooling)
+A nice snowflake animation is played and the knob turns ice-blue.
+
 ![Ice](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%203/IMG_9738.png)
  
 #### Heating (when the system is heating)
+A nice ember animation is played and the knob flickers like a flame.
+
 ![Fire](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%203/IMG_9739.png)
 
 ### Controller
@@ -122,10 +127,10 @@ I got three people to test the system - Ming-Chun (Jeff) Lu, Kae-Jer (Mike) Cho,
 Answer the following:
 
 ### What worked well about the system and what didn't?
-It was very intuitive for users (the colored light on the knob helped users a lot by signalling what state the system was in). The animations also made the system much cooler. We didn't have access to a speaker for this lab so audio playback was not available.
+It was very intuitive for users (the colored light on the knob helped users a lot by signalling what state the system was in). The animations also made the system much cooler. While using the button allowed the users to feel in control, as stated in the earlier feedback, it could easily become annoying/cumbersome to always have to press the button - using a voice activation phrase would solve this. We didn't have access to a speaker for this lab so audio playback was not available.
 
 ### What worked well about the controller and what didn't?
-The controller made it very easy to simulate actual voice controls without much latency or issues with recognition (since I was in control of the processing). The only possible drawbacks would be that I had to be in the same room as the user (could have used an audio streaming service). 
+The controller made it very easy to simulate actual voice controls without much latency or issues with recognition (since I was in control of the voice processing). The only drawback was that I had to be in the same room as the user (using an audio streaming service would solve this). 
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 Latency can be a problem - if user interaction is the main focus then this can siginificantly impact the user's experience. Another issue can be how limiting the controller can be for the operator - only a set of limited actions can be chosen and run.
