@@ -175,7 +175,22 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 
 ### Works Like
 
+In later iterations, it was decided that both the camera and proximity sensor would work together in the system. To detect the presence of a person and start the machine, the proximity sensor would be used to save power and computing. Once the system starts, the camera - which would be more computationally intensive - could then also be used for object detection to see if the person leaving is wearing a mask or holding an umbrella.
+
+![WorkLike](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%204/Part%202%20Work%20Like%20n.png)
+
 ### Acts Like
+
+![ActsLike](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%204/Part%202%20Acts%20Like.png)
+
+[Acts Like MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%204/IMG_9957.MOV)
+([Google Drive link](https://drive.google.com/file/d/1NYYwzwFoxTSf89mJVLxQBZvE22SyXfWQ/view?usp=sharing))
+
+
+In the actual cardboard prototype, only the accelerometer and display was used. Special care was taken in designing the cardboard to allow the knob to twist without tangling wires; the raspberry pi and sensor was mounted to allow easy access for maintenance and debugging.
+
+[Inner Workings MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%204/IMG_9960_s.mov)
+([Google Drive link](https://drive.google.com/file/d/15OfqPhOZEOpQa0QmQF4HKYEsCq7FxbTi/view?usp=sharing))
 
 Reiterating:
 ### Deliverables for this lab are: 
