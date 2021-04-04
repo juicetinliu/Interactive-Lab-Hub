@@ -128,11 +128,23 @@ Here is an example:
 
 Make a paper display for your project that communicates the state of the Pi and a sensor. Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
  
+### The Idea
+
+With wearing a mask being mandatory nowadays, it is sometimes possible to forget to wear your mask when leaving your room/house - something that has occurred to me from time to time. This problem of forgetting things when exiting a room extends to other scenarios such as forgetting to bring your keys or an item that you need to return to a friend. What if there were a device that would remind you about these little tasks when you are about to leave your house? 
+ 
 **a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). Include interim iterations (or at least tell us about them).
+
+For this lab, I decided to create a smart door-handle that when triggered, would play audio and display a message on screen to remind you about important things such as wearing your mask and bringing your car keys. The paper display used here would also be able to show things such the current weather (and remind you to bring an umbrella), and other information that might be useful such as the time and other important messages.
 
 **b. Make a video of your paper display in action.**
 
+The paper display was done digitally:
+[Paper display MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%204/Part%201%20paper%20prototype.mov)
+([Google Drive link](https://drive.google.com/file/d/1vas8jqVqImGVCqRtZSmfGO-BE-04_eNV/view?usp=sharing))
+
 **c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+The display for the information would have to be not to large as to obstruct locating the handle on the door/interfere with the opening of the door; it would have to be large enough to clearly show information from a viewing distance of around 50cm. As part of the door, it would also need to fit the design of the door. Powering the device would likely be done with cables that go through the hinge of the door as to minimize possible damage caused by opening the door often. 
 
 ### Part D
 ### Materiality
@@ -143,11 +155,27 @@ Design a system with the Pi and anything from your kit with a focus on form, and
 
 **a. document the material prototype.** Include candidates that were considered even if they were set aside later.
 
+Various methods could be used to build this prototype including 3D printing, laser-cutting acrylic, cardboard, and paper.
+
 **b. explain the selection.**
+
+These were the considerations
+- **3D printing** the display casing and the doorhandle would yield the most realistic/aesthetic results but would take too much effort and time to model and create.
+- **Laser-cutting acrylic** would be much more time-efficient but would still be too costly for an interactive prototype device.
+- **Paper** would be the quickest to create with but would be too flimsy to hold up as a door handle.
+- **Cardboard** was chosen to be both the most cost-effective and time-efficient method to create a structurally-sound interactive prototype.
 
 ### Part 2.
 
 Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design.
+
+### Looks Like
+
+![LooksLike](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%204/Part%202%20Looks%20Like.png)
+
+### Works Like
+
+### Acts Like
 
 Reiterating:
 ### Deliverables for this lab are: 
