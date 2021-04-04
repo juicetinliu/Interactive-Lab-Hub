@@ -144,7 +144,7 @@ The paper display was done digitally:
 
 **c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
-The display for the information would have to be not to large as to obstruct locating the handle on the door/interfere with the opening of the door; it would have to be large enough to clearly show information from a viewing distance of around 50cm. As part of the door, it would also need to fit the design of the door. Powering the device would likely be done with cables that go through the hinge of the door as to minimize possible damage caused by opening the door often. 
+The display for the information would have to be not to large as to obstruct locating the handle on the door/interfere with the opening of the door; it would have to be large enough to clearly show information from a viewing distance of around 50cm. As part of the door, it would also need to fit the design of the door. Since the display would be located near the doorknob - which is much lower than eye level - it would have to be angled slightly upwards as to aid viewing when near the door. Powering the device would likely be done with cables that go through the hinge of the door as to minimize possible damage caused by opening the door often. 
 
 ### Part D
 ### Materiality
@@ -175,7 +175,7 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 
 ### Works Like
 
-In later iterations, it was decided that both the camera and proximity sensor would work together in the system. To detect the presence of a person and start the machine, the proximity sensor would be used to save power and computing. Once the system starts, the camera - which would be more computationally intensive - could then also be used for object detection to see if the person leaving is wearing a mask or holding an umbrella.
+In later iterations, it was decided that both the camera and proximity sensor would work together in the system. To detect the presence of a person and start the machine, the proximity sensor would be used to save power and computing while idle. Once the system starts, the camera - which would be more computationally intensive - could then also be used for object detection to see if the person leaving is wearing a mask or holding an umbrella, or even detect things such as the person's mood or whether the room's lights are on/off.
 
 ![WorkLike](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%204/Part%202%20Work%20Like%20n.png)
 
