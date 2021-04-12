@@ -96,6 +96,9 @@ Using the set up from the [Lab 3 demo](https://github.com/FAR-Lab/Interactive-La
 
 Include links to your code here, and put the code for these in your repo--they will come in handy later.
 
+Run `part_A.py` and enter either 1, 2, or 3 to run each example!
+https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%205/part_A.py
+
 #### Teachable Machines (beta, optional)
 Google's [TeachableMachines](https://teachablemachine.withgoogle.com/train) might look very simple.  However, its simplicity is very useful for experimenting with the capabilities of this technology.
 
