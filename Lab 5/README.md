@@ -159,11 +159,11 @@ Perhaps it may not detect a thumbs up/down at all if another person were in fron
 **Think about someone using the system. Describe how you think this will work.**
 1. Are they aware of the uncertainties in the system?
 
-They would not be; if a system like this were implemented, people would likely expect it to work flawlessly.
+They would not be; if a system like this were implemented in a product like Zoom, people would likely expect it to work flawlessly.
 
 2. How bad would they be impacted by a miss classification?
 
-For the individual using the system, a miss classification would not impact him/her much unless answering had consequences - group forming, graded quiz, etc. For the class as a whole, lots of miss-classifications could greatly impact the overall yes/no score for the entire class' results.
+For the individual using the system, a miss classification would not impact him/her much unless answering a question had consequences - group forming, graded quiz, etc. For the class as a whole, a lot of miss-classifications could greatly impact the overall yes/no score for the entire class' results.
 
 3. How could change your interactive system to address this?
 
@@ -219,7 +219,7 @@ It is able to detect things that weren't in the training data - I only trained t
 It feels awesome when it works, as if the computer can magically understand what your hand is signalling. Using body language is almost something that is completely exclusive to human-human interaction, so seeing a computer able to detect these body motions is quite amazing.
 
 [Model in Action MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%205/Screen%20Recording%202021-04-21%20at%2001.24.50.mov)
-([Google Drive link](https://drive.google.com/file/d/1U5kffuy9L7WGTMCRxQ9XSa9b7aTx6g0W/view?usp=sharing)
+[(Google Drive link)](https://drive.google.com/file/d/1U5kffuy9L7WGTMCRxQ9XSa9b7aTx6g0W/view?usp=sharing)
 
 ### Part 2.
 
