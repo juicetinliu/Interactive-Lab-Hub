@@ -167,14 +167,14 @@ For the individual using the system, a miss classification would not impact him/
 
 3. How could change your interactive system to address this?
 
-Have some sort of disclaimer; include buttons in the quiz system so their is always fallback to simpler methods of answer; perhaps even include a calibration sequence to allow students to train their own model before answering to increase accuracy.
+Have some sort of disclaimer; include buttons in the quiz system so there is always fallback to simpler methods of answering; perhaps even include a calibration sequence to allow students to train their own model before answering to increase classification accuracy.
 
 4. Are there optimizations you can try to do on your sense-making algorithm.
 
 Use more training data: 
 - Record friends making gestures
-- Find different backgrounds and lighting conditions
-- Include more output classes? Perhaps a 'maybe' option to reduce the confusion of the model
+- Find different backgrounds and lighting conditions for training
+- Include more output classes? Perhaps a 'maybe' option to reduce the confusion of the model when the gesture isn't recognizable as yes/no
 
 ### Part D
 ### Characterize your own Observant system
@@ -225,7 +225,7 @@ It feels awesome when it works, as if the computer can magically understand what
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
-Used Processing to generate the interface!
+Processing (Java) was used to create the interface!
 
 **Include a short video demonstrating the finished result.**
 [Final Demo MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%205/wizards.mov)
