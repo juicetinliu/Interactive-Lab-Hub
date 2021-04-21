@@ -124,21 +124,57 @@ This can be as simple as the boat detector earlier.
 Try out different interactions outputs and inputs.
 **Describe and detail the interaction, as well as your experimentation.**
 
+A reaction detection system that could be implemented in virtual lectures that could simplify feedback/surveys in class and make classes more engaging. When the teacher asks a question and wants to gather everyone's feedback, students can then simply raise a thumbs up or thumbs down on their video and a system would tally the total number of yes/no's present in the virtual classroom. This could speed up the process of gathering lots of answers but make the experience much more fun for students rather than filling out surveys or pressing buttons. Perhaps this could be extended to detect things like numbers (as represented by number of fingers raised), or even objects and facial expressions.
+
+A google TeachableMachine was trained to detect either a thumbs up or thumbs down or nothing.
+
+![training](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%205/Screenshot%202021-04-21%20at%2000.49.51.png)
+
+[Try out the trained model with your webcam!](https://teachablemachine.withgoogle.com/models/G2kI-ujkA/)
+
 ### Part C
 ### Test the interaction prototype
 
 Now flight test your interactive prototype and **note your observations**:
 For example:
-1. When does it what it is supposed to do?
-1. When does it fail?
-1. When it fails, why does it fail?
-1. Based on the behavior you have seen, what other scenarios could cause problems?
+1. When does it do what it is supposed to do?
+
+The model works well for most cases (with myself in the camera) due to the large number of training images used - (different thumbs up/thumbs down gestures, two/one hands, face/no face, no gestures).
+
+2. When does it fail?
+
+The model has a hard time detecting thumbs up/down when the hand is slighly obstructed; it sometimes detects thumbs up/down even when there is no hand gesture. When I turn my head to the side, it detects it as a thumbs down; when I turn my head upwards, it detects a thumbs up!
+
+![Fail](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%205/Screenshot%202021-04-21%20at%2001.07.20.png)
+
+
+3. When it fails, why does it fail?
+
+The failures are likely due to the training data not covering a wide enough variety of scenarios such as different background colors, face types, lighting conditions, etc.
+
+4. Based on the behavior you have seen, what other scenarios could cause problems?
+
+Perhaps it may not detect a thumbs up/down at all if another person were in front of the camera; if the background changes then it may also have trouble detecting gestures or may mistake variances in lighting as a gesture. If someone associates a different gesture with yes/no then it could also pose problems - the model expects only thumbs up/down as yes/no.
 
 **Think about someone using the system. Describe how you think this will work.**
 1. Are they aware of the uncertainties in the system?
-1. How bad would they be impacted by a miss classification?
-1. How could change your interactive system to address this?
-1. Are there optimizations you can try to do on your sense-making algorithm.
+
+They would not be; if a system like this were implemented, people would likely expect it to work flawlessly.
+
+2. How bad would they be impacted by a miss classification?
+
+For the individual using the system, a miss classification would not impact him/her much unless answering had consequences - group forming, graded quiz, etc. For the class as a whole, lots of miss-classifications could greatly impact the overall yes/no score for the entire class' results.
+
+3. How could change your interactive system to address this?
+
+Have some sort of disclaimer; include buttons in the quiz system so their is always fallback to simpler methods of answer; perhaps even include a calibration sequence to allow students to train their own model before answering to increase accuracy.
+
+4. Are there optimizations you can try to do on your sense-making algorithm.
+
+Use more training data: 
+- Record friends making gestures
+- Find different backgrounds and lighting conditions
+- Include more output classes? Perhaps a 'maybe' option to reduce the confusion of the model
 
 ### Part D
 ### Characterize your own Observant system
@@ -154,6 +190,36 @@ During the lecture, we mentioned questions to help characterize a material:
 * How does X feel?
 
 **Include a short video demonstrating the answers to these questions.**
+What can you use X for?
+
+Gesture recognition is great for videos, accesibility, and classifying complex body motions to simpler categories for other applications.
+
+What is a good environment for X?
+
+A controlled environment where the video resolution is great, lighting conditions are fair and the data isn't too noisy (only one person's gesture at a time).
+
+* What is a bad environment for X?
+
+Somewhere with lots of noisy data: a crowd of people making a gesture, bad lighting with lots of variance, or poor video quality in general.
+
+* When will X break?
+
+In any of the bad environments mentioned above; if the gestures made aren't expected by the trained model.
+
+* When it breaks how will X break?
+
+Depending on the input, it would either not detect a gesture (false negatives), or mistakenly detect a gesture when there isn't one (false positives).
+
+* What are other properties/behaviors of X?
+
+It is able to detect things that weren't in the training data - I only trained the model with a single thumbs up/down but the model was able to correctly give a yes/no output when I put two thumbs up/down.
+
+* How does X feel?
+
+It feels awesome when it works, as if the computer can magically understand what your hand is signalling. Using body language is almost something that is completely exclusive to human-human interaction, so seeing a computer able to detect these body motions is quite amazing.
+
+[Model in Action MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%205/Screen%20Recording%202021-04-21%20at%2001.24.50.mov)
+([Google Drive link](https://drive.google.com/file/d/1U5kffuy9L7WGTMCRxQ9XSa9b7aTx6g0W/view?usp=sharing)
 
 ### Part 2.
 
