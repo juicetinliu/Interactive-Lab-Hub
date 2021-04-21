@@ -225,5 +225,8 @@ It feels awesome when it works, as if the computer can magically understand what
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
-**Include a short video demonstrating the finished result.**
+Used Processing to generate the interface!
 
+**Include a short video demonstrating the finished result.**
+[Final Demo MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%205/wizards.mov)
+[(Google Drive link)](https://drive.google.com/file/d/1eV8iKRkige0_jhclF8jabJiEv7iFmyhT/view?usp=sharing)
