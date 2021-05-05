@@ -26,29 +26,35 @@ class Player:
  
 class Maze:
     def __init__(self):
-       self.M = 10
-       self.N = 8
-       self.maze = [ 1,1,1,1,1,1,1,1,1,1,
-                     1,0,0,0,0,0,0,0,0,1,
-                     1,0,0,0,0,0,0,0,0,1,
-                     1,0,1,1,1,1,1,1,0,1,
-                     1,0,1,0,0,0,0,0,0,1,
-                     1,0,1,0,1,1,1,1,0,1,
-                     1,0,0,0,0,0,0,0,0,1,
-                     1,1,1,1,1,1,1,1,1,1,]
+        self.M = 10
+        self.N = 8
+        self.maze = [ 1,1,1,1,1,1,1,1,1,1,
+                    1,0,0,0,0,0,0,0,0,1,
+                    1,0,0,0,0,0,0,0,0,1,
+                    1,0,1,1,1,1,1,1,0,1,
+                    1,0,1,0,0,0,0,0,0,1,
+                    1,0,1,0,1,1,1,1,0,1,
+                    1,0,0,0,0,0,0,0,0,1,
+                    1,1,1,1,1,1,1,1,1,1,]
 
     def draw(self,display_surf,image_surf):
-       bx = 0
-       by = 0
-       for i in range(0,self.M*self.N):
-           if self.maze[ bx + (by*self.M) ] == 1:
-               display_surf.blit(image_surf,( bx * 44 , by * 44))
-      
-           bx = bx + 1
-           if bx > self.M-1:
-               bx = 0 
-               by = by + 1
+        pass
+        bx = 0
+        by = 0
+        for i in range(0,self.M*self.N):
+            if self.maze[ bx + (by*self.M) ] == 1:
+                display_surf.blit(image_surf,( bx * 44 , by * 44))
+        
+            bx = bx + 1
+            if bx > self.M-1:
+                bx = 0 
+                by = by + 1
 
+
+topic = 'IDD/juicey/labyrinth'
+
+x_msg = 0.0
+y_msg = 0.0
 
 class App:
  
@@ -96,17 +102,18 @@ class App:
         while( self._running ):
             pygame.event.pump()
             keys = pygame.key.get_pressed()
-            
-            if (keys[K_RIGHT]):
+            global x_msg
+            global y_msg
+            if (keys[K_RIGHT] or x_msg > 1):
                 self.player.moveRight()
  
-            if (keys[K_LEFT]):
+            if (keys[K_LEFT] or x_msg < -1):
                 self.player.moveLeft()
  
-            if (keys[K_UP]):
+            if (keys[K_UP] or y_msg > 1):
                 self.player.moveUp()
  
-            if (keys[K_DOWN]):
+            if (keys[K_DOWN] or y_msg < -1):
                 self.player.moveDown()
  
             if (keys[K_ESCAPE]):
@@ -116,9 +123,6 @@ class App:
             self.on_render()
         self.on_cleanup()
 
-
-topic = 'IDD/juicey/labyrinth'
-
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic)
@@ -126,8 +130,9 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
     # if a message is recieved on topic, print message
     if msg.topic == topic:
-        val = msg.payload.decode('UTF-8')
-        print(val)
+        x, y = list(map(int, msg.payload.decode('UTF-8').split(',')))
+        x_msg = x
+        y_msg = y
 
 # this lets us exit gracefully (close the connection to the broker)
 def handler(signum, frame):

@@ -83,7 +83,7 @@ while True:
     accel = mpu.acceleration
     x, y, z = accel
     
-    client.publish(topic, f"{x},{y},{z}")
+    client.publish(topic, f"{x},{y}")
 
     # # if we press the button, send msg to cahnge everyones color
     # if not buttonA.value:
