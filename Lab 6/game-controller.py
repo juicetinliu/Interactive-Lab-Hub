@@ -9,13 +9,16 @@ import signal
 i2c = busio.I2C(board.SCL, board.SDA)
 mpu = adafruit_mpu6050.MPU6050(i2c)
 
-print("Player 1 or 2?")
+print("Player 1 or 2? (0 if singleplayer)")
 p = -1
-while p not in [1, 2]:
+while p not in [0, 1, 2]:
     p = int(input())
-    print("Please enter 1 or 2")
+    print("Please enter 1, 2 or 0")
 
-topic = 'IDD/juicey/labyrinth/' + ('X' if p == 1 else 'Y')
+if p == 0:
+    topic = 'IDD/juicey/labyrinth'
+else:
+    topic = 'IDD/juicey/labyrinth/' + ('X' if p == 1 else 'Y')
 p -= 1
 
 def on_connect(client, userdata, flags, rc):
@@ -42,11 +45,22 @@ def handler(signum, frame):
 # hen sigint happens, do the handler callback function
 signal.signal(signal.SIGINT, handler)
 
-# our main loop
-while True:
-    accel = mpu.acceleration
-    
-    client.publish(topic, f"{accel[p]}")
-    
-    time.sleep(.01)
-    
+if p == -1:
+    # our main loop
+    while True:
+        accel = mpu.acceleration
+        x, y, z = accel
+        
+        client.publish(topic, f"{x},{y}")
+
+        time.sleep(.01)
+        
+else:
+    # our main loop
+    while True:
+        accel = mpu.acceleration
+        
+        client.publish(topic, f"{accel[p]}")
+
+        time.sleep(.01)
+        

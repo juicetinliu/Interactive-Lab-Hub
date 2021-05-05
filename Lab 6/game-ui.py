@@ -135,6 +135,10 @@ def on_message(cleint, userdata, msg):
         player_axis = 0 if msg.topic[-1] == 'X' else 1
         m = float(msg.payload.decode('UTF-8'))
         theApp.controls[player_axis] = m
+    
+    if topic in msg.topic:
+        m = msg.payload.decode('UTF-8').split(',')
+        theApp.controls[player_axis] = list(map(float, m))
 
 # this lets us exit gracefully (close the connection to the broker)
 def handler(signum, frame):
