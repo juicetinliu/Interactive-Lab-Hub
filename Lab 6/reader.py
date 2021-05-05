@@ -2,7 +2,7 @@ import paho.mqtt.client as mqtt
 import uuid
 
 # the # wildcard means we subscribe to all subtopics of IDD
-topic = 'nani/#'
+topic = 'IDD/#'
 
 # some other examples
 # topic = 'IDD/a/fun/topic'
@@ -22,11 +22,12 @@ def on_message(cleint, userdata, msg):
 	# you can filter by topics
 	# if msg.topic == 'IDD/some/other/topic': do thing
 
+
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
 # configure network encryption etc
-# client.tls_set()
-# # this is the username and pw we have setup for the class
+client.tls_set()
+# this is the username and pw we have setup for the class
 # client.username_pw_set('idd', 'device@theFarm')
 
 # attach out callbacks to the client
