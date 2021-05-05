@@ -30,6 +30,8 @@ client = mqtt.Client(str(uuid.uuid1()))
 # this is the username and pw we have setup for the class
 # client.username_pw_set('idd', 'device@theFarm')
 
+print("nani")
+
 # attach out callbacks to the client
 client.on_connect = on_connect
 client.on_message = on_message
@@ -38,6 +40,8 @@ client.on_message = on_message
 client.connect(
     'test.mosquitto.org',
     port=8080)
+
+print("connect")
 
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
