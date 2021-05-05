@@ -52,7 +52,14 @@ draw = ImageDraw.Draw(image)
 i2c = busio.I2C(board.SCL, board.SDA)
 mpu = adafruit_mpu6050.MPU6050(i2c)
 
-topic = 'IDD/juicey/labyrinth'
+print("Player 1 or 2?")
+p = -1
+while p not in [1, 2]:
+    p = input()
+    print("Please enter 1 or 2")
+
+topic = 'IDD/juicey/labyrinth/' + ('X' if p == 1 else 'Y')
+p -= 1
 
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
@@ -81,9 +88,9 @@ signal.signal(signal.SIGINT, handler)
 # our main loop
 while True:
     accel = mpu.acceleration
-    x, y, z = accel
+    # x, y, z = accel
     
-    client.publish(topic, f"{x},{y}")
+    client.publish(topic, f"{accel[p]}")
 
     # # if we press the button, send msg to cahnge everyones color
     # if not buttonA.value:

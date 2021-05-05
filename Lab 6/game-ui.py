@@ -4,57 +4,52 @@ import time
 import paho.mqtt.client as mqtt
 import uuid
 import signal
-
+import random
+import math
 
 
 class Player:
-    x = 44
-    y = 44
+    x = 400
+    y = 300
     speed = 1
  
-    def moveRight(self):
-        self.x = self.x + self.speed
+    def moveRight(self, amt = None):
+        if amt is None:
+            self.x = self.x + self.speed
+        else:
+            self.x = self.x + amt
  
-    def moveLeft(self):
-        self.x = self.x - self.speed
+    def moveLeft(self, amt = None):
+        if amt is None:
+            self.x = self.x - self.speed
+        else:
+            self.x = self.x - amt
  
-    def moveUp(self):
-        self.y = self.y - self.speed
+    def moveUp(self, amt = None):
+        if amt is None:
+            self.y = self.y - self.speed
+        else:
+            self.y = self.y - amt
  
-    def moveDown(self):
-        self.y = self.y + self.speed
+    def moveDown(self, amt = None):
+        if amt is None:
+            self.y = self.y + self.speed
+        else:
+            self.y = self.y + amt
  
-class Maze:
+class Hole:
     def __init__(self):
-        self.M = 10
-        self.N = 8
-        self.maze = [ 1,1,1,1,1,1,1,1,1,1,
-                    1,0,0,0,0,0,0,0,0,1,
-                    1,0,0,0,0,0,0,0,0,1,
-                    1,0,1,1,1,1,1,1,0,1,
-                    1,0,1,0,0,0,0,0,0,1,
-                    1,0,1,0,1,1,1,1,0,1,
-                    1,0,0,0,0,0,0,0,0,1,
-                    1,1,1,1,1,1,1,1,1,1,]
+        self.x = random.randrange(100, 700)
+        self.y = random.randrange(100, 500)
 
-    def draw(self,display_surf,image_surf):
-        pass
-        bx = 0
-        by = 0
-        for i in range(0,self.M*self.N):
-            if self.maze[ bx + (by*self.M) ] == 1:
-                display_surf.blit(image_surf,( bx * 44 , by * 44))
-        
-            bx = bx + 1
-            if bx > self.M-1:
-                bx = 0 
-                by = by + 1
-
+    def regenHole(self):
+        self.x = random.randrange(100, 700)
+        self.y = random.randrange(100, 500)
 
 topic = 'IDD/juicey/labyrinth'
 
-x_msg = 0.0
-y_msg = 0.0
+# x_msg = 0.0
+# y_msg = 0.0
 
 class App:
  
@@ -68,7 +63,8 @@ class App:
         self._image_surf = None
         self._block_surf = None
         self.player = Player()
-        self.maze = Maze()
+        self.hole = Hole()
+        self.controls = [0.0, 0.0]
  
     def on_init(self):
         pygame.init()
@@ -77,19 +73,20 @@ class App:
         pygame.display.set_caption('Pygame pythonspot.com example')
         self._running = True
         self._image_surf = pygame.image.load("ball.png").convert()
-        self._block_surf = pygame.image.load("wall.png").convert()
+        self._block_surf = pygame.image.load("hole.png").convert()
  
     def on_event(self, event):
         if event.type == QUIT:
             self._running = False
  
     def on_loop(self):
-        pass
+        if math.dist([self.player.x, self.player.y], [self.hole.x, self.hole.y]) < 40:
+            self.hole.regenHole()
     
     def on_render(self):
         self._display_surf.fill((0,0,0))
         self._display_surf.blit(self._image_surf,(self.player.x,self.player.y))
-        self.maze.draw(self._display_surf, self._block_surf)
+        self._display_surf.blit(self._block_surf,(self.hole.x,self.hole.y))
         pygame.display.flip()
  
     def on_cleanup(self):
@@ -102,19 +99,18 @@ class App:
         while( self._running ):
             pygame.event.pump()
             keys = pygame.key.get_pressed()
-            global x_msg
-            global y_msg
-            if (keys[K_RIGHT] or x_msg > 1):
-                self.player.moveRight()
+            moves = list(map(abs, self.controls))
+            if self.controls[0] > 0.5:
+                self.player.moveRight(moves[0] - 0.5)
  
-            if (keys[K_LEFT] or x_msg < -1):
-                self.player.moveLeft()
+            if self.controls[0] < -0.5:
+                self.player.moveLeft(moves[0] - 0.5)
  
-            if (keys[K_UP] or y_msg > 1):
-                self.player.moveUp()
+            if self.controls[1] > 0.5:
+                self.player.moveUp(moves[1] - 0.5)
  
-            if (keys[K_DOWN] or y_msg < -1):
-                self.player.moveDown()
+            if self.controls[1] < -0.5:
+                self.player.moveDown(moves[1] - 0.5)
  
             if (keys[K_ESCAPE]):
                 self._running = False
@@ -123,16 +119,18 @@ class App:
             self.on_render()
         self.on_cleanup()
 
+theApp = App()
+
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic)
 
 def on_message(cleint, userdata, msg):
     # if a message is recieved on topic, print message
-    if msg.topic == topic:
-        x, y = list(map(int, msg.payload.decode('UTF-8').split(',')))
-        x_msg = x
-        y_msg = y
+    if topic in msg.topic:
+        player_axis = 0 if msg.topic[-1] == 'X' else 1
+        m = float(msg.payload.decode('UTF-8'))
+        theApp.controls[player_axis] = m
 
 # this lets us exit gracefully (close the connection to the broker)
 def handler(signum, frame):
@@ -156,6 +154,5 @@ if __name__ == "__main__" :
         port=8883)
 
     client.loop_start()
-    theApp = App()
     
     theApp.on_execute()
