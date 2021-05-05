@@ -46,7 +46,11 @@ class Hole:
         self.x = random.randrange(100, 700)
         self.y = random.randrange(100, 500)
 
-topic = 'IDD/juicey/labyrinth'
+topic = 'IDD/juicey/labyrinth/#'
+
+topicq = 'IDD/juicey/labyrinth'
+# topicX = 'IDD/juicey/labyrinth/X'
+# topicY = 'IDD/juicey/labyrinth/Y'
 
 # x_msg = 0.0
 # y_msg = 0.0
@@ -127,7 +131,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(cleint, userdata, msg):
     # if a message is recieved on topic, print message
-    if topic in msg.topic:
+    if topicq in msg.topic:
         player_axis = 0 if msg.topic[-1] == 'X' else 1
         m = float(msg.payload.decode('UTF-8'))
         theApp.controls[player_axis] = m
