@@ -117,7 +117,7 @@ class App:
         self.on_cleanup()
 
 
-topic = 'IDD/colors'
+topic = 'IDD/juicey/labyrinth'
 
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
