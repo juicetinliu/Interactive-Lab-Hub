@@ -1,65 +1,44 @@
-import time
-import board
-import busio
-import adafruit_mpu6050
-import socket
+import paho.mqtt.client as mqtt
+import uuid
 
-import signal
-import sys
-from queue import Queue
+# the # wildcard means we subscribe to all subtopics of IDD
+topic = 'IDD/#'
 
- 
-i2c = busio.I2C(board.SCL, board.SDA)
-mpu = adafruit_mpu6050.MPU6050(i2c)
+# some other examples
+# topic = 'IDD/a/fun/topic'
 
-thresh = 15
-run_avg = []
-run_avg_len = 10
+#this is the callback that gets called once we connect to the broker. 
+#we should add our subscribe functions here as well
+def on_connect(client, userdata, flags, rc):
+	print(f"connected with result code {rc}")
+	client.subscribe(topic)
+	# you can subsribe to as many topics as you'd like
+	# client.subscribe('some/other/topic')
 
-peak_neighbors = [(0,0,0), (0,0,0)]
 
-print("1 - Threshold Detection / 2 - Averaging / 3 - Peak Detection")
-mode = int(input())
-while int(mode) not in [1, 2, 3]:
-    print("Please enter 1, 2 or 3")
-    mode = int(input())
+# this is the callback that gets called each time a message is recived
+def on_message(cleint, userdata, msg):
+	print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
+	# you can filter by topics
+	# if msg.topic == 'IDD/some/other/topic': do thing
 
-while True:
-    accel = mpu.acceleration
-    x, y, z = accel
-    if mode == 1:
-        #Threshold detection
-        passedthresh = []
-        for i in range(3):
-            if accel[i] > thresh:
-                passedthresh.append(i)
-        print("Shook in " + "".join([["x", "y", "z"][p] for p in passedthresh]))
-        
-        if max(abs(x), abs(y), abs(z)) > thresh:
-            print("SHOOK?")
-        else:
-            print("Kalm")
-    elif mode == 2:
-        #Averaging
-        run_avg.append((x, y, z))
-        if len(run_avg) > run_avg_len:
-            run_avg.pop(0)
-        
-        output = [0, 0, 0]
-        for x,y,z in run_avg:
-            output[0] += x
-            output[1] += y
-            output[2] += z
-        output = [o / run_avg_len for o in output]
-        print(output, len(run_avg))
-    elif mode == 3:
-        peak_neighbors.append((x, y, z))
-        peaked = []
-        for i in range(3):
-            if peak_neighbors[1][i] > peak_neighbors[0][i] and peak_neighbors[1][i] > peak_neighbors[2][i]:
-                peaked.append(i)
-        print("Peak in " + "".join([["x", "y", "z"][p] for p in peaked]))
-        if len(peak_neighbors) > 2:
-            peak_neighbors.pop(0)
-    
-    
+
+# Every client needs a random ID
+client = mqtt.Client(str(uuid.uuid1()))
+# configure network encryption etc
+client.tls_set()
+# this is the username and pw we have setup for the class
+client.username_pw_set('idd', 'device@theFarm')
+
+# attach out callbacks to the client
+client.on_connect = on_connect
+client.on_message = on_message
+
+#connect to the broker
+client.connect(
+    'farlab.infosci.cornell.edu',
+    port=8883)
+
+# this is blocking. to see other ways of dealing with the loop
+#  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
+client.loop_forever()
