@@ -55,7 +55,7 @@ mpu = adafruit_mpu6050.MPU6050(i2c)
 print("Player 1 or 2?")
 p = -1
 while p not in [1, 2]:
-    p = input()
+    p = int(input())
     print("Please enter 1 or 2")
 
 topic = 'IDD/juicey/labyrinth/' + ('X' if p == 1 else 'Y')
