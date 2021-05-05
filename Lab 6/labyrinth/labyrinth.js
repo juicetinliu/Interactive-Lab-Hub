@@ -13,7 +13,7 @@
 // MQTT client details:
 let broker = {
   hostname: 'test.mosquitto.org',
-  port: 8080
+  port: 1883
 };
 
 // MQTT client:
