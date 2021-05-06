@@ -129,16 +129,24 @@ def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic)
 
+no_players = 0
+print("Number of players? [1 or 2]")
+
+while no_players not in [1, 2]:
+    no_players = int(input())
+    print("1 or 2 players only!")
+
 def on_message(cleint, userdata, msg):
     # if a message is recieved on topic, print message
-    if topicq in msg.topic:
-        player_axis = 0 if msg.topic[-1] == 'X' else 1
-        m = float(msg.payload.decode('UTF-8'))
-        theApp.controls[player_axis] = m
-    
-    if topic in msg.topic:
-        m = msg.payload.decode('UTF-8').split(',')
-        theApp.controls[player_axis] = list(map(float, m))
+    if no_players == 2:
+        if topicq in msg.topic:
+            player_axis = 0 if msg.topic[-1] == 'X' else 1
+            m = float(msg.payload.decode('UTF-8'))
+            theApp.controls[player_axis] = m
+    else:
+        if topicq in msg.topic:
+            m = msg.payload.decode('UTF-8').split(',')
+            theApp.controls = list(map(float, m))
 
 # this lets us exit gracefully (close the connection to the broker)
 def handler(signum, frame):
