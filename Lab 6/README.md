@@ -109,6 +109,6 @@ The first test of the prototype was done with a single player controlling both t
 [Prototype Test MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%206/IDD%206.mp4)
 ([Google Drive link](https://drive.google.com/file/d/1w_kHtzh66yJB0itf2lIojsVnqoip2H_-/view?usp=sharing))
 
-In this demo, player 1 was the video feed on top while player 2 was the video feed on the bottom. Upon closer inspection, it can be seen that player 2's accelerometer was oriented sideways, resulting in him moving the sensor forward-backwards instead of the expected side-to-side motion. There was surprisingly not much latency and the whole experience was pretty fun, especially after we were able to coordinate ourselves after a few attempts.
+In this demo, player 1 was the video feed on top (responsible for the ball's up-down motion) while player 2 was the video feed on the bottom (responsible for the ball's left-right motion). Upon closer inspection, it can be seen that player 2's accelerometer was oriented sideways, resulting in him moving the sensor forward-backwards instead of the expected side-to-side motion. There was surprisingly not much latency and the whole experience was pretty fun, especially after we were able to coordinate ourselves after a few attempts.
 
 **5. BONUS (Wendy didn't approve this so you should probably ignore it)** get the whole class to run your code and make your distributed system BIGGER.
