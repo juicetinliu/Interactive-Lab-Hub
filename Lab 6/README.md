@@ -87,10 +87,28 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **1. Explain your design** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
 
+![Labyrinth maze puzzle](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%206/adsf.png)
+
+Inspired by wooden labyrinth puzzle games where a single player has to tilt the board to maneuver a marble around a maze, we decided to make a co-op version of the game. With two players, each player would be responsible for one axis of tilt (either x or y), requiring both to work together to complete the challenge given to them.
+
 **2. Diagram the architecture of the system.** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
+
+![Architecture Diagram](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%206/Diagram.png)
+
+The two players each use their own raspberry pi connected accelerometer, with the objective of rotating the virtual board and getting the magenta ball into the grey hole - after which the hole randomly generates in another location and the game is reset. By default, player 1 is responsible for the X-axis rotation of the labyrinth board while player 2 is responsible for the Y-axis. The corresponding accelerometer values are sent over MQTT under a specific topic (`IDD/juicey/labyrinth/`) before a UI program - run separately on a third machine - parses the X, Y values over MQTT and displays the resulting ball location and labyrinth board. This setup requires both players to see the screen at the same time, but it could be extended as a communication game by allowing only a third person to see the screen and relay information about the ball's location and state of the game to the other two players. Two scripts were written - one for the raspberry pi controllers `game-controller.py`, and one for the game interface `game-ui.py` (run on the computer) written using the pygame library.
 
 **3. Build a working prototype of the system.** Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect?
 
+[Prototype Test MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%206/test.mov)
+([Google Drive link](https://drive.google.com/file/d/1FgrFotuAti5W3BIbbT7XcCAbAIDY43n_/view?usp=sharing))
+
+The first test of the prototype was done with a single player controlling both the X and Y rotational axes for the labyrinth over MQTT. With a 0.01s delay, the experience was quite flawless and moving the accelerometer would instantaneously affect the ball's position. The user interface was done quite simply by having the user input the number of players they had (1 or two players). If there were two players, the controller script with continue by asking which player would be player 1 and which would be player 2. Problems could easily arise if both players played as the same player (there are no checks to see which 'role' is currently taken; perhaps this could be solved by having another sub-topic containting the leftover roles allowed.
+
 **4. Document the working prototype in use.** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
+
+[Prototype Test MP4 file](https://github.com/juicetinliu/Interactive-Lab-Hub/blob/Spring2021/Lab%206/IDD%206.mp4)
+([Google Drive link](https://drive.google.com/file/d/1w_kHtzh66yJB0itf2lIojsVnqoip2H_-/view?usp=sharing))
+
+In this demo, player 1 was the video feed on top while player 2 was the video feed on the bottom. Upon closer inspection, it can be seen that player 2's accelerometer was oriented sideways, resulting in him moving the sensor forward-backwards instead of the expected side-to-side motion. There was surprisingly not much latency and the whole experience was pretty fun, especially after we were able to coordinate ourselves after a few attempts.
 
 **5. BONUS (Wendy didn't approve this so you should probably ignore it)** get the whole class to run your code and make your distributed system BIGGER.
